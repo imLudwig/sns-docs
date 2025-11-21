@@ -1,6 +1,7 @@
 site_name: SNS-Docs
 nav:
   - Home: index.md
-  - Utils: developement/sns_utils
+  - Utils: developement/sns_utils.md
 theme: readthedocs
+
 
