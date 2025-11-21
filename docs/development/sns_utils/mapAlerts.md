@@ -1,7 +1,3 @@
-Gerne, hier ist die Dokumentation im Docusaurus (Markdown) Format für das bereitgestellte Lua-Skript.
-
------
-
 # 🚨 Map Alerts System Dokumentation
 
 Dieses Skript implementiert ein serverseitiges System zur Auslösung von **Alarmen/Benachrichtigungen** auf der Karte für bestimmte Spieler. Es beinhaltet eine Funktion zur Protokollierung dieser Alarme über einen **Discord Webhook** mit detaillierten Spieler- und Positionsinformationen.
@@ -11,22 +7,6 @@ Dieses Skript implementiert ein serverseitiges System zur Auslösung von **Alarm
 ## ⚙️ Konfiguration
 
 Die Konfiguration erfolgt über die lokalen Variablen am Anfang des Skripts.
-
-```lua
-local standardLabel = "Alarm !"
-local standardMessage = "Ein Alarm wurde ausgelöst !"
-local standardDuration = 60 -- in Sekunden
-local standardRadius = 200
-local standardAlertRadius = 64
-
-local Debug = false
-
-local Webhook = {
-    url = "Ihre_Discord_Webhook_URL_hier", -- **Muss angepasst werden!**
-    avatar = "https://i.postimg.cc/FK0wQq2f/Ludwig-stupid.png",
-    name = "Alarm wurde ausgelöst"
-}
-```
 
   * `standardLabel`: Standard-Titel für den Alarm.
   * `standardMessage`: Standard-Nachricht für den Alarm.
