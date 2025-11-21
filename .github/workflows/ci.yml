@@ -1,0 +1,27 @@
+# .github/workflows/ci.yml
+name: Build & Deploy MkDocs
+on:
+  push:
+    branches:
+      - main # Der Branch, den Sie für Ihren Quellcode verwenden
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write # Wichtig: Erlaubt dem Action, in den gh-pages Branch zu schreiben
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install mkdocs mkdocs-material
+      - name: Deploy MkDocs
+        run: mkdocs gh-deploy --force
