@@ -6,7 +6,3 @@ theme: readthedocs
 repo_url: https://github.com/imLudwig/sns-docs/edit/main
 edit_uri: root/path/docs/
 site_author: Ludwig
-nav:
-  - Introduction: 'index.md'
-  - 'sns_utils.md'
-  - 'Discord': 'https://discord.gg/MDS4TXcn'
