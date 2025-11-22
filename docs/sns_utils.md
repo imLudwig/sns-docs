@@ -1,4 +1,3 @@
-# SNS Utils ist ein selbstgeschrieben Utils Resource welche interaktionen zwischen den Skripten ermöglichen Soll. 
+# Docs für Dev, GD und erweitertes Team
 
-## [mapAlerts](https://imludwig.github.io/sns-docs/development/sns_utils/mapAlerts)
-- erlaubt radien mit label an bestimmte Nutzergruppen (Joblocked) oder spezielle Spieler (server IDs) zu versenden.
+Bitte gebt diese Dokumentation nicht weiter, wissen ist macht und wenn griefer nicht wissen wie unsere Systeme funktionieren profitieren wir!
