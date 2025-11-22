@@ -22,10 +22,6 @@ Die Konfiguration erfolgt über die lokalen Variablen am Anfang des Skripts.
 
 Die Hauptfunktionalität wird über das serverseitige Event `sns-utils:triggerMapAlert` ausgelöst.
 
-### Event-Name
-
-`sns-utils:triggerMapAlert`
-
 ### Payload (Datenstruktur)
 
 Das Event erwartet ein `data`-Objekt (eine Lua-Tabelle) mit den folgenden Parametern:
@@ -38,7 +34,7 @@ Das Event erwartet ein `data`-Objekt (eine Lua-Tabelle) mit den folgenden Parame
 | `label` | `string` | Ja | `"Alarm !"` | Der Titel des Alarms/Blips. |
 | `message` | `string` | Ja | `"Ein Alarm wurde ausgelöst !"` | Die Benachrichtigungsnachricht. |
 | `duration` | `number` | Ja | `60` | Dauer des Karten-Blips in Sekunden. |
-| `color` | `string` | Ja | `nil` | Farbe des Karten-Blips (z.B. `"red"`, `"green"`, `"blue"`, etc.). |
+| `color` | `string` | Ja | `yellow` | Farbe des Karten-Blips, verfügbar:  "red", "yellow", "blue", "green", "cyan", "white", "black", "pink", "purple" |
 | `radius` | `number` | Ja | `200` | Maximaler Radius um die `coords`, in dem sich Spieler mit passenden `jobs` befinden müssen, um den Alarm zu erhalten. |
 | `ignoreRadius` | `boolean` | Ja | `false` | Wenn `true`, wird die Radius-Prüfung ignoriert (Spieler mit passendem Job erhalten Alarm überall). |
 | `alertRadius` | `number` | Ja | `64` | Der Radius, innerhalb dessen der Karten-Blip **zufällig** platziert wird, um die genaue Position zu verschleiern. |
@@ -82,19 +78,5 @@ TriggerServerEvent('sns-utils:triggerMapAlert', payload)
 ```
 
 -----
-
-## 📞 Discord Protokollierung (`logToDiscord`)
-
-Die Funktion `logToDiscord` sendet detaillierte Informationen über jeden ausgelösten Alarm an den konfigurierten Discord Webhook.
-
-### Gesendete Informationen
-
-Die Discord-Nachricht enthält einen **Embed** mit folgenden Feldern:
-
-  * **Titel:** Der Alarm-Label und ein Indikator, ob es sich um einen **[LIVE]** oder **[DEV]** Server handelt.
-  * **Spieler:** Name und anklickbare Grafana-ID des Spielers, der den Alarm ausgelöst hat.
-  * **Empfänger:** Die Anzahl der Spieler, die den Alarm erhalten haben.
-  * **Position überprüfen:** Ein anklickbarer Link zu einer Grafana-Seite zur Positionsüberprüfung.
-  * **Alarm-Nachricht:** Die vollständige Alarm-Nachricht.
 
 > **Wichtig:** Die Discord-Protokollierung wird übersprungen, wenn das Skript im **DEV**-Modus läuft (`cleanName` enthält "development") und die Variable `Debug` auf `false` gesetzt ist.
