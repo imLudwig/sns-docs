@@ -45,6 +45,6 @@ Gerne, hier ist die Konfiguration als kopierbarer Code-Block mit ergänzenden Er
   * **`konzeptHousing`**:
       * Wenn auf `true`, aktiviert dies die speziellen Konzeptregeln. Das Haus ist dann mit einer speziellen Firma und einem Job verknüpft (sowie einer Tür für automatische Schlüsselübergabe)
   * **`konzeptJob` / `konzeptJobLabel`**:
-      * Der **technische Job-Name** (`doctor_state`) und der **Anzeigename** (`Staatlicher Arzt`). Nur Spieler mit diesem Job können das Konzept-Housing nutzen oder kaufen.
+      * Der **technische Job-Name** (`doctor_state`) und der **Anzeigename** (`Staatlicher Arzt`). Der Spieler der dieses Housing kauft erhält automatisch diesen Job.
   * **`company` / `companyLabel`**:
-      * Die **zugehörige Firma/Organisation**. Oft für Logik wie Rechnungen oder firmeninterne Lager genutzt.
+      * Die **zugehörige company **. Das Label dient lediglich der Anzeige also bspw. "smith_sd" / "Schmiede Saint Denis"
