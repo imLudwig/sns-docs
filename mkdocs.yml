@@ -1,5 +1,5 @@
 site_name: SNS-Docs
-repo_url: https://github.com/imLudwig/sns-docs/edit/main
+repo_url: https://github.com/imLudwig/sns-docs/
 edit_uri: docs/
 site_author: Ludwig
 theme:
@@ -7,6 +7,7 @@ theme:
   features:
     - content.code.copy
     - content.code.select
+
 
 
 
