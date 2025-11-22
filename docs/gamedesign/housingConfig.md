@@ -1,5 +1,3 @@
-Gerne, hier ist die Konfiguration als kopierbarer Code-Block mit ergänzenden Erklärungen zu den Parametern:
-
 ## 📋 Housing-Konfiguration (Lua-Beispiel)
 
 ```lua
