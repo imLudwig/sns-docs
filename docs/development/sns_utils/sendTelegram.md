@@ -31,7 +31,7 @@ Die Funktion wird über `TriggerEvent` aufgerufen und akzeptiert ein einzelnes *
 
 Dieses Beispiel zeigt, wie die Datentabelle erstellt und das Ereignis ausgelöst wird, um ein Telegramm über eine Bankeinzahlung an einen Charakter mit der `charId` `12345` zu senden.
 
-```lua
+``` lua
 local function sendeKontoauszug(empfaengerCharId)
     local telegrammInfo = {
         -- Die Charakter-ID des Empfängers
