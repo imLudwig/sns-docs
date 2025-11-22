@@ -1,0 +1,944 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Ludwig">
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../sendTelegram/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>🚨 Map Alerts System Dokumentation - SNS-Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map-alerts-system-dokumentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SNS-Docs" class="md-header__button md-logo" aria-label="SNS-Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SNS-Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🚨 Map Alerts System Dokumentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/imLudwig/sns-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SNS-Docs" class="md-nav__button md-logo" aria-label="SNS-Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SNS-Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/imLudwig/sns-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to the SNS-Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sns utils
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sns utils
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚨 Map Alerts System Dokumentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚨 Map Alerts System Dokumentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#konfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Konfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Nutzung (Events)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Nutzung (Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload-datenstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload (Datenstruktur)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-nutzung-server-und-client-seite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beispiel-Nutzung (Server- und Client-Seite)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beispiel-Nutzung (Server- und Client-Seite)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-nutzung-via-triggerevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-Nutzung (via TriggerEvent):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-nutzung-via-triggerserverevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client-Nutzung (via TriggerServerEvent):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sendTelegram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✉️ Telegramm-Versenden: sns_utils:sendTelegrammToChar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gamedesign
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gamedesign
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gamedesign/housingConfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    housingConfig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#konfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Konfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Nutzung (Events)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Nutzung (Events)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payload-datenstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payload (Datenstruktur)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-nutzung-server-und-client-seite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beispiel-Nutzung (Server- und Client-Seite)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beispiel-Nutzung (Server- und Client-Seite)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-nutzung-via-triggerevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-Nutzung (via TriggerEvent):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-nutzung-via-triggerserverevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client-Nutzung (via TriggerServerEvent):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="map-alerts-system-dokumentation">🚨 Map Alerts System Dokumentation</h1>
+<p>Dieses Skript implementiert ein serverseitiges System zur Auslösung von <strong>Alarmen/Benachrichtigungen</strong> auf der Karte für bestimmte Spieler. Es beinhaltet eine Funktion zur Protokollierung dieser Alarme über einen <strong>Discord Webhook</strong> mit detaillierten Spieler- und Positionsinformationen.</p>
+<hr />
+<h2 id="konfiguration">⚙️ Konfiguration</h2>
+<p>Die Konfiguration erfolgt über die lokalen Variablen am Anfang des Skripts.</p>
+<ul>
+<li><code>standardLabel</code>: Standard-Titel für den Alarm.</li>
+<li><code>standardMessage</code>: Standard-Nachricht für den Alarm.</li>
+<li><code>standardDuration</code>: Standard-Dauer des Karten-Blips in Sekunden.</li>
+<li><code>standardRadius</code>: Standard-Radius, in dem Spieler sich befinden müssen, um den Alarm zu erhalten (wenn keine <code>serverId</code> angegeben ist).</li>
+<li><code>standardAlertRadius</code>: Standard-Radius für die <strong>zufällige Blip-Positionierung</strong> auf der Karte.</li>
+<li><code>Debug</code>: Wenn auf <code>true</code> gesetzt, werden zusätzliche Debug-Meldungen in der Server-Konsole ausgegeben.</li>
+<li><code>Webhook</code>: Konfiguration für den Discord-Webhook. <strong>Passen Sie die <code>url</code> an</strong> oder lassen Sie sie leer, um die Discord-Protokollierung zu deaktivieren.</li>
+</ul>
+<hr />
+<h2 id="nutzung-events">🎯 Nutzung (Events)</h2>
+<p>Die Hauptfunktionalität wird über das serverseitige Event <code>sns-utils:triggerMapAlert</code> ausgelöst.</p>
+<h3 id="payload-datenstruktur">Payload (Datenstruktur)</h3>
+<p>Das Event erwartet ein <code>data</code>-Objekt (eine Lua-Tabelle) mit den folgenden Parametern:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Typ</th>
+<th style="text-align: left;">Optional</th>
+<th style="text-align: left;">Standardwert</th>
+<th style="text-align: left;">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>coords</code></strong></td>
+<td style="text-align: left;"><code>vector3</code></td>
+<td style="text-align: left;">Nein</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Die zentralen Koordinaten des Alarmereignisses.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>jobs</code></td>
+<td style="text-align: left;"><code>table</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Eine Liste von Job-Namen, an die der Alarm gesendet werden soll (z.B. <code>{ "police", "medic" }</code>). Wird ignoriert, wenn <code>serverId</code> verwendet wird.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>serverId</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Wenn gesetzt, wird der Alarm <strong>nur</strong> an diesen spezifischen Spieler gesendet (überschreibt <code>jobs</code> und <code>radius</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>"Alarm !"</code></td>
+<td style="text-align: left;">Der Titel des Alarms/Blips.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>"Ein Alarm wurde ausgelöst !"</code></td>
+<td style="text-align: left;">Die Benachrichtigungsnachricht.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>duration</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>60</code></td>
+<td style="text-align: left;">Dauer des Karten-Blips in Sekunden.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>color</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>yellow</code></td>
+<td style="text-align: left;">Farbe des Karten-Blips, verfügbar:  "red", "yellow", "blue", "green", "cyan", "white", "black", "pink", "purple"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>radius</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>200</code></td>
+<td style="text-align: left;">Maximaler Radius um die <code>coords</code>, in dem sich Spieler mit passenden <code>jobs</code> befinden müssen, um den Alarm zu erhalten.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ignoreRadius</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Wenn <code>true</code>, wird die Radius-Prüfung ignoriert (Spieler mit passendem Job erhalten Alarm überall).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>alertRadius</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>64</code></td>
+<td style="text-align: left;">Der Radius, innerhalb dessen der Karten-Blip <strong>zufällig</strong> platziert wird, um die genaue Position zu verschleiern.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sprite</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Ja</td>
+<td style="text-align: left;"><code>"blip_mp_gun_for_hire"</code></td>
+<td style="text-align: left;">Name des Blip-Symbols. Unterstützt Aliase: <code>"question"</code>, <code>"exclamation"</code>, <code>"fire"</code>, <code>"lightning"</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="beispiel-nutzung-server-und-client-seite">Beispiel-Nutzung (Server- und Client-Seite)</h3>
+<h4 id="server-nutzung-via-triggerevent">Server-Nutzung (via <code>TriggerEvent</code>):</h4>
+<pre><code class="language-lua">-- TriggerEvent für Server-interne Nutzung
+local payload = {
+    coords = vector3(2618.7656, -1297.9266, 52.1914),
+    jobs = { &quot;police&quot;, &quot;sheriff&quot; }, 
+    label = &quot;Bankraub Alarm&quot;,
+    message = &quot;Ein Bankraub wurde in Valentine gemeldet!&quot;,
+    duration = 120,
+    color = &quot;red&quot;,
+    alertRadius = 80
+}
+
+TriggerEvent('sns-utils:triggerMapAlert', payload)
+</code></pre>
+<h4 id="client-nutzung-via-triggerserverevent">Client-Nutzung (via <code>TriggerServerEvent</code>):</h4>
+<pre><code class="language-lua">-- TriggerServerEvent für Client-seitige Auslösung
+local payload = {
+    -- Coords sollten vom Client gesendet werden, z.B. die Position des Spielers
+    coords = GetEntityCoords(PlayerPedId()),
+    jobs = { &quot;police&quot; }, 
+    label = &quot;Notfall-Taste gedrückt&quot;, 
+    message = &quot;Ich brauche Unterstützung!&quot;,
+    duration = 45,
+    color = &quot;yellow&quot;,
+    alertRadius = 50
+}
+
+TriggerServerEvent('sns-utils:triggerMapAlert', payload)
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>Wichtig:</strong> Die Discord-Protokollierung wird übersprungen, wenn das Skript im <strong>DEV</strong>-Modus läuft (<code>cleanName</code> enthält "development") und die Variable <code>Debug</code> auf <code>false</code> gesetzt ist.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
