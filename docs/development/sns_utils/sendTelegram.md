@@ -1,51 +1,57 @@
-# Telegram Utility Usage: `sns_utils:sendTelegrammToChar`
+# ✉️ Telegramm-Versenden: `sns_utils:sendTelegrammToChar`
 
-This utility function is used to send an in-game "telegram" message directly to a character by inserting the message details into the database.
+Diese Dienstprogrammfunktion wird verwendet, um eine **„Telegramm“**-Nachricht direkt an einen Charakter im Spiel zu senden, indem die Nachrichtendetails in die Datenbank eingefügt werden.
 
-It is triggered via a standard Lua event mechanism, typically on the server-side.
+Sie wird über einen **standardmäßigen Lua-Ereignismechanismus** ausgelöst, typischerweise auf der Serverseite.
 
-### Prerequisites
+---
 
-**Crucial Note:** Before sending, the recipient's `charId` **must** be linked to a `telegram_id` entry in the `visn_telegram_characters` database table for the message to be delivered correctly. If there is no TelegrammId the Telegramm won´t be sent.
+### Voraussetzungen
 
-### Event Details
+**Wichtiger Hinweis:** Vor dem Senden **muss** die `charId` des Empfängers mit einem `telegram_id`-Eintrag in der Datenbanktabelle `visn_telegram_characters` verknüpft sein, damit die Nachricht korrekt zugestellt werden kann. **Wenn keine TelegrammId vorhanden ist, wird das Telegramm nicht gesendet.**
 
-The function is called via `TriggerEvent` and accepts a single table object containing all the telegram details.
+---
 
-| Key | Type | Description |
+### Ereignis-Details
+
+Die Funktion wird über `TriggerEvent` aufgerufen und akzeptiert ein einzelnes **Tabellenobjekt**, das alle Telegramm-Details enthält.
+
+| Schlüssel | Typ | Beschreibung |
 | :--- | :--- | :--- |
-| `charId` | `number` | The character ID of the recipient. |
-| `message` | `string` | The main content/body of the telegram. Supports newline characters (`\n`). |
-| `title` | `string` | The subject or title of the telegram. |
-| `sender_name` | `string` | The name displayed as the sender (e.g., "Post Office"). |
-| `sender_location` | `string` | The specific location the telegram was sent from (e.g., "Saint Denis"). |
-| `sender_area` | `string` | The broader geographical area the telegram was sent from (e.g., "Lemoyne"). |
+| `charId` | `number` | Die Charakter-ID des Empfängers. |
+| `message` | `string` | Der Hauptinhalt/Text des Telegramms. Unterstützt Zeilenumbruchzeichen (`\n`). |
+| `title` | `string` | Der Betreff oder Titel des Telegramms. |
+| `sender_name` | `string` | Der Name, der als Absender angezeigt wird (z. B. "Postamt"). |
+| `sender_location` | `string` | Der spezifische Ort, von dem das Telegramm gesendet wurde (z. B. "Saint Denis"). |
+| `sender_area` | `string` | Das größere geografische Gebiet, aus dem das Telegramm gesendet wurde (z. B. "Lemoyne"). |
 
-### Example Usage (Lua)
+---
 
-This example demonstrates how to construct the data table and trigger the event to send a telegram about a bank deposit to a character with `charId` `12345`.
+### Beispiel-Nutzung (Lua)
+
+Dieses Beispiel zeigt, wie die Datentabelle erstellt und das Ereignis ausgelöst wird, um ein Telegramm über eine Bankeinzahlung an einen Charakter mit der `charId` `12345` zu senden.
 
 ```lua
-local function sendBankStatement(recipientCharId)
+local function sendeKontoauszug(empfaengerCharId)
     local telegrammInfo = {
-        -- The recipient's character ID
-        charId = recipientCharId, 
+        -- Die Charakter-ID des Empfängers
+        charId = empfaengerCharId, 
 
-        -- Subject line
-        title = 'Urgent Deposit Notification', 
+        -- Betreffzeile
+        title = 'Dringende Einzahlungsbenachrichtigung', 
         
-        -- Message body (use \n for line breaks)
-        message = 'A deposit of $500 was successfully processed to your account.\nThank you for your business.', 
+        -- Nachrichtentext (verwenden Sie \n für Zeilenumbrüche)
+        message = 'Eine Einzahlung von $500 wurde erfolgreich auf Ihrem Konto verarbeitet.\nVielen Dank für Ihr Geschäft.', 
         
-        -- Sender details
+        -- Absenderdetails
         sender_name = 'Hope Valley Bank',
         sender_location = 'Saint Denis',
         sender_area = "Lemoyne"
     }
 
-    -- Trigger the event with the compiled information table
+    -- Löst das Ereignis mit der zusammengestellten Informationstabelle aus
     TriggerEvent("sns_utils:sendTelegrammToChar", telegrammInfo)
 end
 
--- Example call to send the telegram
-sendBankStatement(12345)
+-- Beispiel-Aufruf zum Senden des Telegramms
+sendeKontoauszug(12345)
