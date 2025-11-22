@@ -1,6 +1,12 @@
 site_name: SNS-Docs
-theme: readthedocs
 repo_url: https://github.com/imLudwig/sns-docs/edit/main
-edit_uri: root/path/docs/
+edit_uri: docs/
 site_author: Ludwig
+theme:
+  name: material
+  features:
+    - content.code.copy 
+    
+    - content.code.select
+
 
