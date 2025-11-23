@@ -58,7 +58,7 @@ sidebar: {
         collapsible: true,
         collapsed: false,
       }),
-        "/Gamedesign/": getSidebar({
+        "/gamedesign/": getSidebar({
         contentRoot: "/docs",
         contentDirs: ["gamedesign"],
         collapsible: true,
