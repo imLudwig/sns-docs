@@ -1,16 +1,8 @@
-# About
+# Das Projekt
 
-Willkommen auf der Docs Seite von `SAINTS & SINNERS`, hier stellen wir Dokumentation für unsere Systeme für die Gamedesign und Developement Abteilung.
+Saints & Sinners ist ein RedM Projekt dass seit May 2024 existiert und sich über die Zeit einen Namen in der Szene gemacht hat. 
 
-Verwaltet wird das Developement sowie das Gamedesign von Ludwig 
+Hier befindet sich der Docs Raum für das Team von SnS, insofern du mehr interesse an S&S hast oder dort spielen möchtest empfehlen wir dir [unsere Website](https://snsrp.de/). 
 
-<p style="color: #ff7340; border: 1px solid rgba(255, 135, 23, 0.25); border-radius:5px; padding: 1rem;">Im folgenden gibt´s code der zeigt wie hier dokumentiert wird:.</p>
-
-```lua
-exports("sns_utilsgetCurrentBucketId", function(playerSrc)
-    local retval = GetPlayerRoutingBucket(playerSrc)
-    return retval
-end)
-```
-
-Falls du Dokumentationen schreiben willst kannst du dir das [hier](https://vitepress.vuejs.org/guide/markdown) durchlesen.
+Liebe Grüße
+Das Developement
