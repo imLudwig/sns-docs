@@ -10,20 +10,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read # Added this permission, though not strictly required, it's good practice for checkout.
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4 # Updated to v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
+      # HINWEIS: fetch-depth: 0 entfernt, es sei denn, Sie benötigen die gesamte History
+      # - uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
       
-      - uses: actions/setup-node@v4 # Updated to v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18 # Recommend using a recent, actively supported version like 18 or 20
+          node-version: 18
           cache: npm
           
       - run: npm install --frozen-lockfile
@@ -31,13 +33,14 @@ jobs:
       - name: Build
         run: npm run docs:build
         
-      - uses: actions/configure-pages@v3 
+      # *** ENTFERNT: actions/configure-pages@v3 ist unnötig und kann Konflikte verursachen. ***
+      # - uses: actions/configure-pages@v3 
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3 # Updated to v3/v4 is also available
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist # Ensure this is the correct path to your built files
+          path: docs/.vitepress/dist 
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # Updated to v4, which is the recommended latest major version
+        uses: actions/deploy-pages@v4
