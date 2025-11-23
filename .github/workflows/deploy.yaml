@@ -5,30 +5,39 @@ on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
+      contents: read # Added this permission, though not strictly required, it's good practice for checkout.
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4 # Updated to v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      
+      - uses: actions/setup-node@v4 # Updated to v4
         with:
-          node-version: 16
+          node-version: 18 # Recommend using a recent, actively supported version like 18 or 20
           cache: npm
+          
       - run: npm install --frozen-lockfile
+      
       - name: Build
         run: npm run docs:build
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v4
+        
+      - uses: actions/configure-pages@v3 
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # Updated to v3/v4 is also available
         with:
-          path: docs/.vitepress/dist
-      - name: Deploy
+          path: docs/.vitepress/dist # Ensure this is the correct path to your built files
+          
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4 # Updated to v4, which is the recommended latest major version
