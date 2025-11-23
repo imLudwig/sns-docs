@@ -7,6 +7,21 @@ export default {
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
+    outline: {
+          level: [2, 3], 
+          label: 'Auf dieser Seite' 
+        },
+        
+        lastUpdatedText: 'Zuletzt aktualisiert', 
+
+        docFooter: {
+          prev: 'Vorherige Seite',
+          next: 'Nächste Seite'
+        },
+
+        returnToTopLabel: 'Zurück nach oben',
+        sidebarMenuLabel: 'Menü',
+        langMenuLabel: 'Sprache ändern',
     logo: "/logo.svg",
     editLink: {
       pattern: "https://github.com/imLudwig/sns-docs/edit/main/docs/:path",
