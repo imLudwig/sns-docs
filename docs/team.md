@@ -32,7 +32,7 @@ const developers = [
       {
         avatar: 'https://avatars.githubusercontent.com/u/147651367?v=4',
         name: 'Dusk',
-        title: 'AI-Korrespondent',
+        title: 'KI-Korrespondent',
         links: [
             { icon: 'github', link: 'https://github.com/StarBoyDusk' },
         ]
