@@ -20,24 +20,25 @@ const developers = [
         links: [
             { icon: 'github', link: 'https://github.com/imLudwig' },
         ]
-    },
-     {
-        avatar: 'https://avatars.githubusercontent.com/u/147651367?v=4',
-        name: 'Dusk',
-        title: 'AI-Korrespondent',
-        links: [
-            { icon: 'github', link: 'https://github.com/StarBoyDusk' },
-        ]
-    },
-     {
+        },
+       {
         avatar: 'https://avatars.githubusercontent.com/u/10331752?v=4',
         name: 'Roschy',
         title: 'Developer & Mentor',
         links: [
             { icon: 'github', link: 'https://github.com/JulianLegler' },
         ]
-    },
-   {
+      },
+      {
+        avatar: 'https://avatars.githubusercontent.com/u/147651367?v=4',
+        name: 'Dusk',
+        title: 'AI-Korrespondent',
+        links: [
+            { icon: 'github', link: 'https://github.com/StarBoyDusk' },
+        ]
+      },
+
+     {
         avatar: 'https://avatars.githubusercontent.com/u/69167497?v=4',
         name: 'Lucas',
         title: 'Möchtegern-Developer',
