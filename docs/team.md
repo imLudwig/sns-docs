@@ -49,14 +49,6 @@ const developers = [
 
 const specialThanks = [
     {
-        avatar: 'https://avatars.githubusercontent.com/u/10902965?v=4',
-        name: 'Bytesizd',
-        title: 'Ersteller des Docs-Boilerplat',
-        links: [
-            { icon: 'github', link: 'https://github.com/AndrewR3K' },
-        ]
-    },
-  {
         avatar: 'https://avatars.githubusercontent.com/u/76929464?v=4',
         name: 'gamingApple',
         title: 'Systemadministrator',
@@ -64,6 +56,14 @@ const specialThanks = [
             { icon: 'github', link: 'https://github.com/gamingapple' },
         ]
     },
+    {
+        avatar: 'https://avatars.githubusercontent.com/u/10902965?v=4',
+        name: 'Bytesizd',
+        title: 'Ersteller des Docs-Boilerplat',
+        links: [
+            { icon: 'github', link: 'https://github.com/AndrewR3K' },
+        ]
+    }
 ]
 
 
