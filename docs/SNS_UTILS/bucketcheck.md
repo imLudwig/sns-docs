@@ -13,7 +13,7 @@ Die Funktion kann direkt über den Export-Mechanismus auf dem Server aufgerufen 
 **Syntax:**
 
 ```lua
-local playerBucket = exports["resourceName"]:sns_utils:getCurrentBucketId(playerSource)
+local playerBucket = exports["sns_utils"]:getCurrentBucketId(playerSource)
 ````
 
   * `playerSource` ist die Server-ID des Spielers.
