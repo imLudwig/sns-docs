@@ -58,6 +58,12 @@ sidebar: {
         collapsible: true,
         collapsed: false,
       }),
+        "/Gamedesign/": getSidebar({
+        contentRoot: "/docs",
+        contentDirs: ["gamedesign"],
+        collapsible: true,
+        collapsed: false,
+      }),
     },
     footer: {
       message: "Released under the GNU General Public License v2.0.",
