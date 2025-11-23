@@ -22,7 +22,7 @@ export default {
         returnToTopLabel: 'Zurück nach oben',
         sidebarMenuLabel: 'Menü',
         langMenuLabel: 'Sprache ändern',
-    logo: "/logo.svg",
+    logo: "/logo.png",
     editLink: {
       pattern: "https://github.com/imLudwig/sns-docs/edit/main/docs/:path",
       text: "auf GitHub bearbeiten",
