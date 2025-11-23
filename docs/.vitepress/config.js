@@ -2,8 +2,8 @@ import { getSidebar } from "vitepress-plugin-auto-sidebar";
 
 export default {
   base: "/",
-  title: "VitePress Boilerplate",
-  description: "An awesome boilerplate for a simple vitepress site",
+  title: "SNS-DOCS",
+  description: "Docs damit Dusk und Callahan nicht mich fragen",
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
@@ -27,19 +27,19 @@ export default {
 sidebar: {
       "/api/": getSidebar({
         contentRoot: "/docs",
-        contentDirs: ["api", "sns_utils"],
+        contentDirs: ["api", "SNS_UTILS"],
         collapsible: true,
         collapsed: false,
       }),
       "/api": getSidebar({
         contentRoot: "/docs",
-        contentDirs: ["api", "sns_utils"], 
+        contentDirs: ["api", "SNS_UTILS"], 
         collapsible: true,
         collapsed: false,
       }),
-      "/sns_utils/": getSidebar({
+      "/SNS_UTILS/": getSidebar({
         contentRoot: "/docs",
-        contentDirs: ["api","sns_utils"],
+        contentDirs: ["api","SNS_UTILS"],
         collapsible: true,
         collapsed: false,
       }),
