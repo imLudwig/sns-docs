@@ -1,9 +1,9 @@
 import { getSidebar } from "vitepress-plugin-auto-sidebar";
 
 export default {
-  base: "/sns-docs/",
-  title: "SNS-DOCS",
-  description: "Docs damit Dusk und Callahan nicht mich fragen",
+  base: "/",
+  title: "VitePress Boilerplate",
+  description: "An awesome boilerplate for a simple vitepress site",
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
