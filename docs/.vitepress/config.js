@@ -30,9 +30,10 @@ export default {
     siteTitle: "Docs",
     outline: "deep",
     nav: [
-      // { text: "Get Started", link: "/getstarted" },
+      
       { text: "Das Projekt", link: "/about" },
-      { text: "Docs", link: "/api" },
+      { text: "GD-Docs", link: "/gamedesign" },
+      { text: "Dev-Docs", link: "/api" },
       { text: "Team", link: "/team" },
     ],
     socialLinks: [
