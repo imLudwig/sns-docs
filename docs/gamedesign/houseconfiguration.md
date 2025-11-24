@@ -1,7 +1,5 @@
 # 🏠 Housing-Konfiguration einreichen
 
-Bitte übermittle dem Development die folgende **Lua-Tabelle** mit allen ausgefüllten Informationen. Bei Unsicherheiten kannst du den Wert mit einem Kommentar versehen oder auf dem Standardwert (`default`) belassen.
-
 -----
 
 ## 💵 Aktuelle Steuerkonfiguration in $ (monatlich)
@@ -22,7 +20,6 @@ steuern werden also so definiert:
 taxAmount = Config.konzeptTaxes.veryLow,
 ```
 
------
 
 ## 💻 Codebeispiel
 
@@ -82,9 +79,12 @@ Bitte verwende dieses Format, wenn du dir noch unsicher bist was die einzelnen W
 | **`company`** | String | **Firmen-ID** des Konzepts. |
 | `doorId` | Zahl | Die ID der Tür, wenn sie über das Housing-System gesperrt werden soll (ermitteln mit **`/doorlock 1`**). |
 
------
 
 ## 💾 Leere Vorlage (Zur direkten Übernahme)
+
+Bitte übermittle dem Development die folgende **Lua-Tabelle** mit allen ausgefüllten Informationen. Bei Unsicherheiten kannst du den Wert mit einem Kommentar versehen oder auf dem Standardwert
+belassen.
+
 
 ```lua
 {
