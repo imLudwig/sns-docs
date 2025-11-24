@@ -4,6 +4,26 @@ Bitte übermittle dem Development die folgende **Lua-Tabelle** mit allen ausgef�
 
 -----
 
+## 💵 Aktuelle Steuerkonfiguration in $ (monatlich)
+
+```lua 
+    Config.konzeptTaxes = {
+        veryLow = 25,
+        low = 35,
+        middle = 45,
+        high = 55,
+        veryHigh = 65
+    },
+```
+
+steuern werden also so definiert: 
+
+```lua
+taxAmount = Config.konzeptTaxes.veryLow,
+```
+
+-----
+
 ## 💻 Codebeispiel
 
 Bitte verwende dieses Format, wenn du dir noch unsicher bist was die einzelnen Werte bedeuten.
