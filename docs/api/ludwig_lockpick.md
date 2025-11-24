@@ -4,7 +4,7 @@
 
 Das `ludwig_lockpick`-Skript verwaltet den gesamten Dietrich-Vorgang, von der Voraussetzungsprüfung über das interaktive NUI-Minispiel bis zur Anwendung von Konsequenzen (z.B. Verletzungen bei Misserfolg).
 
-<p style="color: #ff7340; border: 1px solid rgba(255, 135, 23, 0.25); border-radius:5px; padding: 1rem;">Wichtig: Die notwendige Überprüfung des Werkzeugbesitzes sowie die Abfrage des Spieler-Fähigkeitswerts (`ludwig_skillz`) werden vollständig intern durch dieses Skript durchgeführt und müssen nicht vor dem Aufruf in Ihrem Skript geprüft werden. &nbsp;
+<p style="color: #ff7340; border: 1px solid rgba(255, 135, 23, 0.25); border-radius:5px; padding: 1rem;">Wichtig: Die notwendige Überprüfung des Werkzeugbesitzes sowie die Abfrage des Spieler-Fähigkeitswerts (`ludwig_skillz`) werden vollständig intern durch dieses Skript durchgeführt und müssen nicht vor dem Aufruf in Ihrem Skript geprüft werden. <br> <br>
 Auch das setzen von Merkmalen sowie einer Szene wird automatisch von ludwig_lockpick selbst übernommen !</p>
 
 
