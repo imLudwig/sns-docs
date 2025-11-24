@@ -1,4 +1,4 @@
-# Technische Dokumentation: `ludwig_lockpick` - API
+# `ludwig_lockpick` - API
 
 ## 1. Kurzbeschreibung
 
