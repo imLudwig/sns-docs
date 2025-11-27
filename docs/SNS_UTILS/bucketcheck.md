@@ -4,7 +4,7 @@ Dieses Skript stellt Funktionen bereit, um die **Routing Bucket ID** eines Spiel
 
 ---
 
-## 1\. Serverseitig (Exports und State Bag 🌟)
+## 1\. Serverseitig (Exports und State Bag)
 
 Der Bucket-Wert kann auf zwei Arten serverseitig abgerufen werden:
 
