@@ -4,20 +4,57 @@ Dieses Skript stellt Funktionen bereit, um die **Routing Bucket ID** eines Spiel
 
 ---
 
-## 1. Serverseitig (Exports)
+Absolut, das ist **korrekt**\!
 
-Die Funktion kann direkt über den Export-Mechanismus auf dem Server aufgerufen werden.
+Der State Bag, den wir implementiert haben (`player.state.currentBucketId`), ist auf dem Server jederzeit verfügbar und kann direkt ausgelesen werden. Dies ist eine **effiziente Alternative** zum Aufruf des `exports`.
+
+Hier ist der aktualisierte Abschnitt 1 der Dokumentation, der diese Option hinzufügt:
+
+-----
+
+# 📚 `bucketCheck` Dokumentation (Aktualisiert)
+
+Dieses Skript stellt Funktionen bereit, um die **Routing Bucket ID** eines Spielers abzurufen und synchronisiert diesen Wert über den State Bag.
+
+-----
+
+## 1\. Serverseitig (Exports und State Bag 🌟)
+
+Der Bucket-Wert kann auf zwei Arten serverseitig abgerufen werden:
+
+### a) Über den Export-Mechanismus (Funktionsaufruf)
 
 **Syntax:**
 
 ```lua
 local playerBucket = exports["sns_utils"]:getCurrentBucketId(playerSource)
-````
+```
 
   * `playerSource` ist die Server-ID des Spielers.
-  * **Rückgabe:** Die Routing Bucket ID (Zahl) des Spielers.
+  * **Rückgabe:** Die Routing Bucket ID (Zahl) des Spielers, stets tick-genau.
+
+### b) Über den Server-Side State Bag (Direktzugriff)
+
+Da der Server den Wert kontinuierlich im **State Bag** des Spielers speichert, kann der Wert **direkt und ohne Funktionsaufruf** ausgelesen werden.
+
+**Syntax:**
+
+```lua
+local player = Player(playerSource)
+
+if player then
+    local playerBucket = player.state.currentBucketId or 0
+end
+
+-- Oder kürzer: local playerBucket = Player(playerSource)?.state?.currentBucketId or 0
+```
+
+  * `playerSource` ist die Server-ID des Spielers.
+  * `Player(playerSource)` gibt das **Server-Spielerobjekt** zurück.
+  * `playerObject.state.currentBucketId` liefert den **zuletzt gespeicherten** Bucket-Wert (max 10 sekunden).
 
 -----
+
 
 ## 2\. Clientseitig (State Bag)
 
