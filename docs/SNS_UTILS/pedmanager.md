@@ -78,8 +78,7 @@ local npcDefinitions = {
         scenario = 'WORLD_HUMAN_DRINKING_BEER',
         
         -- Aussehen
-        randomizeOutfit = false, -- Deaktiviert zufällige Kleidung
-        outfit = 1, -- Lädt Preset 1
+        outfit = 1, -- Lädt Preset 1, falls nicht gesetzt wird random gesetzt
         
         -- Callbacks
         onSpawn = function(ped)
