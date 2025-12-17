@@ -12,8 +12,9 @@ shared_scripts {
 }
 ```
 
-> [!IMPORTANT]
-> Ohne die Definition von `Config.Debug` funktionieren die spezialisierten Debug-Prints nicht korrekt.
+::: danger
+Ohne die Definition von `Config.Debug` funktionieren die spezialisierten Debug-Prints nicht korrekt.
+:::
 
 ---
 
@@ -32,7 +33,6 @@ Ein Standard-Log, der zusätzlich Metadaten liefert.
 Ein bedingter Log für die Entwicklungsphase.
 
 * **Verhalten:** Identisch mit `Print`, jedoch wird die Nachricht **nur ausgegeben**, wenn `Config.Debug = true` gesetzt ist.
-* **Nutzen:** Verhindert das "Spammen" der Konsole auf Live-Servern, ohne die Debug-Befehle im Code löschen zu müssen.
 
 ### `WarnPrint(text)`
 
@@ -54,7 +54,7 @@ Print("Das Script wurde geladen.")
 -- [script:ludwig_crafti] [ludwig_crafting] @ludwig_crafting/server/sfreecraft.lua:129 (fn) Das Script wurde geladen.
 
 DebugPrint("Diese Info siehst du nur im Debug-Modus!") 
--- Output (wenn Config.Debug true): [script:ludwig_crafti] [ludwig_crafting] @ludwig_crafting/server/sfreecraft.lua:132 (fn) Diese Info siehst du nur im Debug-Modus!
+-- Output (wenn Config.Debug true): [ludwig_crafting] @ludwig_crafting/server/sfreecraft.lua:132 (fn) Diese Info siehst du nur im Debug-Modus!
 
 if not SomeVariable then
     WarnPrint("Warnung: Variable ist nil!")
