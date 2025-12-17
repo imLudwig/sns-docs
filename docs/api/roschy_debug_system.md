@@ -10,7 +10,7 @@ Um das System in einem Script zu nutzen, muss die `main.lua` als **Shared Script
 shared_scripts {
     '@roschy_debug_system/main.lua'
 }
-
+```
 
 > [!IMPORTANT]
 > Ohne die Definition von `Config.Debug` funktionieren die spezialisierten Debug-Prints nicht korrekt.
